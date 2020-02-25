@@ -15,7 +15,10 @@ Authors: Daniel De Leon (Cal Poly) and Danelle Cline (MBARI)
 5. Run `jupyter notebook` and start a new notebook with your custom "kernel-name"
 
 ## TensorFlow .pb to .UFF
-1. `python3 /usr/lib/python3.6/dist-packages/uff/bin/convert_to_uff.py <model_name.pb>`
-2. Run pb2uff.ipynb
+`python3 /usr/lib/python3.6/dist-packages/uff/bin/convert_to_uff.py <model_name.pb>`
+
+## .UFF to serialized .engine file
+* Run pb2uff.ipynb:
     * Make sure "Automatically deduced input nodes" and "Automatically deduced out nodes" names are placed in the parser.register_input and parser.register_output function - not the names from graph in TF before making the pb file
     * The dimension of the input, however, do need to match those from TF
+    * TODO: Find best max_batch_size and max_workspace_size parameter values for engine
