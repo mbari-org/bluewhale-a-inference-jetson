@@ -21,4 +21,5 @@ Authors: Daniel De Leon (Cal Poly) and Danelle Cline (MBARI)
 * Run pb2uff.ipynb:
     * Make sure "Automatically deduced input nodes" and "Automatically deduced out nodes" names are placed in the parser.register_input and parser.register_output function - not the names from graph in TF before making the pb file
     * The dimension of the input, however, do need to match those from TF
+    * NOTE: builder.build_engine(network,config) function takes about 1.5 minutes - Nano became completely occuppied with this process. Saw significant slow down
     * TODO: Find best max_batch_size and max_workspace_size parameter values for engine
