@@ -18,8 +18,11 @@ Authors: Daniel De Leon (Cal Poly) and Danelle Cline (MBARI)
 `python3 /usr/lib/python3.6/dist-packages/uff/bin/convert_to_uff.py <model_name.pb>`
 
 ## .UFF to serialized .engine file
-* Run pb2uff.ipynb:
+* Run uff2engine.ipynb:
     * Make sure "Automatically deduced input nodes" and "Automatically deduced out nodes" names are placed in the parser.register_input and parser.register_output function - not the names from graph in TF before making the pb file
-    * The dimension of the input, however, do need to match those from TF
+    * The dimensions of the input, however, do need to match those from TF
     * NOTE: builder.build_engine(network,config) function takes about 1.5 minutes - Nano became completely occuppied with this process. Saw significant slow down
     * TODO: Find best max_batch_size and max_workspace_size parameter values for engine
+## Infer TRT Engine
+*  Run inferEngine.ipynb
+    * uncomment `#!{sys.executable} -m pip install pycuda` to install pycuda in the correct path
