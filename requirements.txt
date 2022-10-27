@@ -1,0 +1,4 @@
+tensorflow-gpu==1.15.0+nv19.11
+tensorrt==6.0.1.10
+uff==0.6.5
+
